@@ -1,0 +1,15 @@
+services:
+
+  # PostgreSQL 
+  postgres:
+    container_name: postgres
+    build: ./postgres
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_URL: postgres://admin:password@localhost:5432/auto-test
+      POSTGRES_DB: auto-test
+      POSTGRES_HOST: postgres
+    ports:
+      - "5532:5432"
+    
